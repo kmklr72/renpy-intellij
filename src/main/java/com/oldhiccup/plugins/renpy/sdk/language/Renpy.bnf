@@ -1,0 +1,31 @@
+// Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+{
+  parserClass="com.oldhiccup.plugins.renpy.sdk.language.parser.RenpyParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Renpy"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.oldhiccup.plugins.renpy.sdk.language.psi"
+  psiImplPackage="com.oldhiccup.plugins.renpy.sdk.language.psi.impl"
+
+  elementTypeHolderClass="com.oldhiccup.plugins.renpy.sdk.language.psi.RenpyTypes"
+  elementTypeClass="com.oldhiccup.plugins.renpy.sdk.language.psi.RenpyElementType"
+  tokenTypeClass="com.oldhiccup.plugins.renpy.sdk.language.psi.RenpyTokenType"
+
+  psiImplUtilClass="com.oldhiccup.plugins.renpy.sdk.language.psi.impl.RenpyPsiImplUtil"
+}
+
+renpyFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY {
+  pin=3
+  recoverWhile="recover_property"
+  mixin="com.oldhiccup.plugins.renpy.sdk.language.psi.impl.RenpyNamedElementImpl"
+  implements="com.oldhiccup.plugins.renpy.sdk.language.psi.RenpyNamedElement"
+  methods=[getKey getValue getName setName getNameIdentifier getPresentation]
+}
+
+private recover_property ::= !(KEY|SEPARATOR|COMMENT)

@@ -10,6 +10,31 @@
     <extensions defaultExtensionNs="com.intellij">
         <fileType name="Renpy File" implementationClass="com.oldhiccup.plugins.renpy.sdk.language.RenpyFileType"  fieldName="INSTANCE" language="Renpy" extensions="rpy"/>
         <fileTypeFactory implementation="com.oldhiccup.plugins.renpy.sdk.language.RenpyFileTypeFactory"/>
+        
+        <lang.parserDefinition language="Renpy" implementationClass="com.oldhiccup.plugins.renpy.sdk.language.RenpyParserDefinition"/>
+        <lang.syntaxHighlighterFactory language="Renpy"
+                                       implementationClass="com.oldhiccup.plugins.renpy.sdk.language.RenpySyntaxHighlighterFactory"/>
+        <colorSettingsPage implementation="com.oldhiccup.plugins.renpy.sdk.language.RenpyColorSettingsPage"/>
+        <annotator language="JAVA" implementationClass="com.oldhiccup.plugins.renpy.sdk.language.RenpyAnnotator"/>
+        <codeInsight.lineMarkerProvider language="JAVA"
+                                        implementationClass="com.oldhiccup.plugins.renpy.sdk.language.RenpyLineMarkerProvider"/>
+        <completion.contributor language="Renpy"
+                                implementationClass="com.oldhiccup.plugins.renpy.sdk.language.RenpyCompletionContributor"/>
+        <psi.referenceContributor language="JAVA"
+                                  implementation="com.oldhiccup.plugins.renpy.sdk.language.RenpyReferenceContributor"/>
+        <lang.refactoringSupport language="Renpy"
+                                 implementationClass="com.oldhiccup.plugins.renpy.sdk.language.RenpyRefactoringSupportProvider"/>
+        <lang.findUsagesProvider language="Renpy"
+                                 implementationClass="com.oldhiccup.plugins.renpy.sdk.language.RenpyFindUsagesProvider"/>
+        <lang.foldingBuilder language="JAVA" implementationClass="com.oldhiccup.plugins.renpy.sdk.language.RenpyFoldingBuilder"/>
+        <gotoSymbolContributor implementation="com.oldhiccup.plugins.renpy.sdk.language.RenpyChooseByNameContributor"/>
+        <lang.psiStructureViewFactory language="Renpy"
+                                      implementationClass="com.oldhiccup.plugins.renpy.sdk.language.RenpyStructureViewFactory"/>
+        <lang.formatter language="Renpy" implementationClass="com.oldhiccup.plugins.renpy.sdk.language.RenpyFormattingModelBuilder"/>
+        <codeStyleSettingsProvider implementation="com.oldhiccup.plugins.renpy.sdk.language.RenpyCodeStyleSettingsProvider"/>
+        <langCodeStyleSettingsProvider implementation="com.oldhiccup.plugins.renpy.sdk.language.RenpyLanguageCodeStyleSettingsProvider"/>
+        <lang.commenter language="Renpy" implementationClass="com.oldhiccup.plugins.renpy.sdk.language.RenpyCommenter"/>
+
     </extensions>
 
 
