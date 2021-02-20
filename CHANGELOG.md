@@ -4,8 +4,7 @@
 
 ## [Unreleased]
 ### Changed
-- Dependencies - upgrade `org.jlleitschuh.gradle.ktlint` to `10.0.0`
-- Update `platformVersion` to `2020.2.4` for compatibility with macOS Big Sur
+- First version
 
 ## [0.8.2]
 ### Changed

@@ -1,19 +1,16 @@
 <idea-plugin>
-    <id>org.jetbrains.plugins.template</id>
-    <name>Template</name>
-    <vendor>JetBrains</vendor>
+    <id>com.oldhiccup.plugins.renpy</id>
+    <name>Ren'py</name>
+    <vendor>Old Hiccup</vendor>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="org.jetbrains.plugins.template.services.MyApplicationService"/>
-        <projectService serviceImplementation="org.jetbrains.plugins.template.services.MyProjectService"/>
+        <fileType name="Renpy File" implementationClass="com.oldhiccup.plugins.renpy.sdk.language.RenpyFileType"  fieldName="INSTANCE" language="Renpy" extensions="rpy"/>
+        <fileTypeFactory implementation="com.oldhiccup.plugins.renpy.sdk.language.RenpyFileTypeFactory"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="org.jetbrains.plugins.template.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+
 </idea-plugin>
