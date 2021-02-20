@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.oldhiccup.renpyintellij.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.oldhiccup.renpyintellij.MyBundle
 
 class MyApplicationService {
 
